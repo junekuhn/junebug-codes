@@ -1,11 +1,11 @@
 {
   "header": {
     "icon": {
-      "name": "Tina",
+      "name": "BiCommentAdd",
       "color": "orange",
       "style": "float"
     },
-    "name": "Tina Starter",
+    "name": "Junebug Codes",
     "color": "default",
     "nav": [
       {
@@ -26,13 +26,14 @@
     "color": "default",
     "social": {
       "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "twitter": "/justinkuhnmedia",
+      "instagram": "/junebug.codes",
+      "github": "/justinkuhn"
     }
   },
   "theme": {
-    "color": "blue",
-    "font": "sans",
-    "darkMode": "system"
+    "color": "purple",
+    "font": "nunito",
+    "darkMode": "dark"
   }
 }
