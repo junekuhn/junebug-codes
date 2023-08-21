@@ -10,15 +10,11 @@
     "nav": [
       {
         "href": "",
-        "label": "Home"
+        "label": "Portfolio"
       },
       {
         "href": "about",
         "label": "About"
-      },
-      {
-        "href": "posts",
-        "label": "Blog"
       }
     ]
   },
