@@ -174,12 +174,6 @@ export const Post = (props: PostType) => {
               </span>
             </>
           )}
-          <p
-            data-tina-field={tinaField(props, "date")}
-            className="text-base text-gray-400 group-hover:text-gray-500 dark:text-gray-300 dark:group-hover:text-gray-150"
-          >
-            {formattedDate}
-          </p>
         </div>
       </Container>
       {props.heroImg && (
@@ -201,7 +195,7 @@ export const Post = (props: PostType) => {
           </div>
         </div>
       )}
-      <Container className={`flex-1 pt-4`} width="small" size="large">
+      <Container className={`flex-1 pt-4`} width="medium" size="large">
         <div
           data-tina-field={tinaField(props, "_body")}
           className="prose dark:prose-dark w-full max-w-none"

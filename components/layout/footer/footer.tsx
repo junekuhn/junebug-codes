@@ -3,11 +3,11 @@ import Link from "next/link";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
-import { RawRenderer } from "./rawRenderer";
+// import { RawRenderer } from "./rawRenderer";
 import { useTheme } from "..";
 import { Icon } from "../../util/icon";
 
-export const Footer = ({ data, icon, rawData }) => {
+export const Footer = ({ data }) => {
   const theme = useTheme();
   const socialIconClasses = "h-7 w-auto";
   const socialIconColorClasses = {
@@ -46,19 +46,11 @@ export const Footer = ({ data, icon, rawData }) => {
     <footer className={`bg-gradient-to-br ${footerColorCss}`}>
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
-          <Link
+        <Link
             href="/"
-            className="group mx-2 flex items-center font-bold tracking-tight text-gray-400 dark:text-gray-300 opacity-50 hover:opacity-100 transition duration-150 ease-out whitespace-nowrap"
+            className="flex gap-10 items-center h-full  whitespace-nowrap tracking-[.002em]"
           >
-            <Icon
-              parentColor={data.color}
-              data={{
-                name: icon.name,
-                color: data.color === "primary" ? "primary" : icon.color,
-                style: icon.style,
-              }}
-              className="inline-block h-10 w-auto group-hover:text-orange-500"
-            />
+            <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.png"/>
           </Link>
           <div className="flex gap-4">
             {data.social && data.social.facebook && (
@@ -122,7 +114,7 @@ export const Footer = ({ data, icon, rawData }) => {
               </a>
             )}
           </div>
-          <RawRenderer parentColor={data.color} rawData={rawData} />
+          {/* <RawRenderer parentColor={data.color} rawData={rawData} /> */}
         </div>
         <div
           className={`absolute h-1 bg-gradient-to-r from-transparent ${

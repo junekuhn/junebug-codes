@@ -50,7 +50,7 @@ export const Layout = ({
           }`}
         >
           <Header data={data?.header} />
-          <div className="text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-row">
+          <div id="main" className="text-gray-800 bg-gradient-to-br mx-auto from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-row">
             {children}
           </div>
           <Footer
