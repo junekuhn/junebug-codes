@@ -65,16 +65,15 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
     <div
       className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
     >
-      <Container size="custom" className="py-0 relative z-10 w-full">
-        <div className="flex items-center w-full justify-between gap-6">
-          <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
+      <Container size="custom" className="py-0 relative h-auto z-10 w-full">
+        <div className="flex items-center w-full flex-wrap justify-center md:justify-between gap-6">
             <Link
               href="/"
-              className="flex gap-10 items-center h-full  whitespace-nowrap tracking-[.002em]"
+              className="flex gap-10 items-center  whitespace-nowrap tracking-[.002em]"
             >
               <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.png"/>
             </Link>
-          </h4>
+
           <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
             {data.nav &&
               data.nav.map((item, i) => {

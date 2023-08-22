@@ -15,7 +15,7 @@ export const Container = ({
     default: "py-12",
   };
   const widthClass = {
-    small: "max-w-full",
+    small: "max-w-[1440px]",
     medium: "max-w-5xl",
     large: "max-w-8xl",
     custom: "",
