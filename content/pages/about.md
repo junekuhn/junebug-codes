@@ -13,6 +13,8 @@ blocks:
 
 
       ![](/uploads/DSC05797.JPG)
+
+      
     color: default
     _template: content
 ---

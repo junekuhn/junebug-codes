@@ -15,6 +15,10 @@
       {
         "href": "about",
         "label": "About"
+      },
+      {
+        "href": "uploads/CV_Developer.pdf",
+        "label": "Developer CV"
       }
     ]
   },
