@@ -140,6 +140,17 @@ const config = defineConfig({
                   },
                 },
               },
+              {
+                name: "VideoPlayer",
+                label: "VideoPlayer",
+                fields: [
+                  {
+                    name: "url",
+                    label: "Video URL",
+                    type: "string",
+                  },
+                ],
+              },
             ],
             isBody: true,
           },

@@ -21,6 +21,7 @@ import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
 import { PostType } from "../../pages/posts/[filename]";
 import { tinaField } from "tinacms/dist/react";
+import ReactPlayer from "react-player/lazy";
 
 const components: Components<{
   BlockQuote: {
@@ -35,6 +36,9 @@ const components: Components<{
     buttonText: string;
     children: TinaMarkdownContent;
     disclaimer?: TinaMarkdownContent;
+  };
+  VideoPlayer: {
+    url: string;
   };
 }> = {
   code_block: (props) => <Prism {...props} />,
@@ -110,6 +114,9 @@ const components: Components<{
       <img src={props.url} alt={props.alt} />
     </span>
   ),
+  VideoPlayer: (props) => {
+    return( <ReactPlayer controls={true} url={props.url} />);
+  },
 };
 
 export const Post = (props: PostType) => {
