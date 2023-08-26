@@ -115,6 +115,7 @@ const components: Components<{
     </span>
   ),
   VideoPlayer: (props) => {
+    //@ts-ignore
     return( <ReactPlayer controls={true} url={props.url} />);
   },
 };
