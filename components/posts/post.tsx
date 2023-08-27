@@ -115,7 +115,7 @@ const components: Components<{
     </span>
   ),
   VideoPlayer: (props) => {
-    return( <ReactPlayer controls={true} url={props.url} />);
+    return( <ReactPlayer width="100%" height="550px" controls={true} url={props.url} />);
   },
 };
 
