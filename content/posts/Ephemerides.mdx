@@ -12,11 +12,15 @@ excerpt: >
   rods as points of contacts on a live circuit.
 ---
 
+## Overview
+
 During my residency at Goldsmiths, University of London, I built a microtonal instrument to explore pitch ratios and relationships outside equal temperament.  Spanning the worlds of physical computing, interface design, sculpture, and C++ programming on the Bela platform, this project outlines a new method to explore improvisation in microtonality.
 
 In the same way early astronomers used calculation tables to explore the trajectories of celestial bodies, this instrument explores microtonality in which the performer manually constructs ratios of pitches and their corresponding placement on the keyboard.  Equal temperament, the way most instruments are designed, is only one potential destination on a near limitless plane of frequency manipulations. The rawness and freedom of this method of music-making is reflected in the instrument itself, with bare brass rods as points of contacts on a live circuit.  The Trill Craft's capacitive sensors enable delicate touch to control an unpredictable sound world.
 
 Without displays or pre-determined theory on what note should go when, the instrumentalist is free to explore the multidimensional plane of mathematical harmony from a set of open-ended algorithms.  Sound and listening are championed as the beginning, middle, and end of microtonality improvisation.  I found musicality in shifting between different algorithms, in constrast most music composition tactics of maintaining a single temperament within one performance.  In this sense music theory is the last step of the feedback loop;  after playing, listening, and interacting with different methods of constructing chords and melodies, new algorithms are written to better fit an intuition of playing style and gesture
+
+## Media
 
 <VideoPlayer url="https://www.youtube.com/embed/yHDFJebhBDc" />
 
@@ -32,4 +36,20 @@ Testing the controls in the Bela IDE:
 
 ![](/uploads/wires.jpeg)
 
-<VideoPlayer />
+## Technical Deep Dive
+
+One of the algorithm options is logarithmic, in which a ratio (8:1) for example, is divided logarithmically (base 2) by a given number of steps.  To our ears, it’s like dividing 8 into n steps evenly. If the number of steps is 3, the resulting ratios would be 8:4:2:1, and you’d hear octaves, and it would sound extremely consonant.
+
+Another option is what [mannfishh](https://www.youtube.com/@mannfishh "mannfishh") ( a big inspiration for this instrument) refers to as arithmetic division, (think addition and subtraction) in which you divide the “difference” between an 8:1 ratio with normal division (8-1=7), considering  so the separator is 7/3, and the resulting number would be 24/3 (8), 17/3, 10/3, and 3/3 (1).
+
+The third option is what mannfishh refers to as ratio division (think multiplication and division), in which you take the ratio and divide it by the number of steps, making the separator (8\*1) /3 = 8/3 and the resultings values 1, 8/3, 16/3 and 24/3, which are multiples of 8/3
+
+When playing the instrument you don’t have to think about these algorithms, but I do think it would be important for the performer to understand how the algorithms function.  I’ve found musicality in switching between the algorithms, as the constrast is so intense that it can be used to move into another section.
+
+It’s important to remember that every part of this math can be changed on the fly when performing, from the top value of the ratio (8), the bottom value of the ratio (1), the number of steps (3), and the algorithm choice that go into the calculation of the frequency values for the keyboard.  Where the keys are placed however, is an automatic process of centering the original ratio (8:1) and the step between those in the center of the keyboard, and letting the algorithm generate the rest of the frequencies outside the original ratio.  Yes, this does generate negative frequencies sometimes (and zero…) and I’m still not sure what the best way to go about dealing with that in a way that still provides a good playable experience.
+
+The synth itself is very straightforward, with basic options to choose the base frequency (what the 1 in any ratio actually corresponds to in terms of frequency), glide amount, waveform selection, biquad filtering, and ADSR controls.
+
+To clear up a few things, Ephemerides is not really a Just Intonation instrument because just intonation requires a move manual, or hard coded, approach to constructing ratios.  This instrument follows a more algorithmic approach, using a general purpose equation to generate the frequencies on the keyboard, where JI says C=1, D=9:8, E=5:4, F=4:3, etc.  You couldn’t generate a JI keyboard on Ephemerides because JI isn’t constructed from a mathematical formula.  You couldn’t generate non-western scales from India, the Middle East, North Africa, etc. for the same reason.
+
+There are other limitations, however, when it came to the physical construction of the instrument. Because I chose to solder brass directly on to the capacitive sensor, I could only fit 14 brass rods on the keyboard before it became to fragile to work with.  The Trill Craft had 30 sensors total, and if I were working with different hardware there would be a potential for creating bigger scales with bigger keyboards.
