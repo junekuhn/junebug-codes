@@ -1,6 +1,6 @@
 ---
 title: Superlooper
-thumbnail: "../static/uploads/superlooper.png"
+thumbnail: "../static/uploads/superlooper.webp"
 year: "2022"
 categories:
 - maxmsp

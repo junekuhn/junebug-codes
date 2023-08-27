@@ -1,6 +1,6 @@
 ---
 title: Planet Echo
-thumbnail: '../static/uploads/planetecho.jpg'
+thumbnail: '../static/uploads/planetecho.webp'
 year: "2019"
 categories: 
 - Sonification

@@ -12,7 +12,7 @@ blocks:
       saxophone, and live code.
 
 
-      ![](/uploads/DSC05797.JPG)
+      ![](/uploads/DSC05797.webp)
 
       
     color: default

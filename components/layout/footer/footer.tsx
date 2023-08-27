@@ -50,7 +50,7 @@ export const Footer = ({ data }) => {
             href="/"
             className="flex gap-10 items-center h-full  whitespace-nowrap tracking-[.002em]"
           >
-            <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.png"/>
+            <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.webp"/>
           </Link>
           <div className="flex gap-4">
             {data.social && data.social.facebook && (

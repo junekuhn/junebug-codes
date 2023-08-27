@@ -1,6 +1,6 @@
 ---
 title: 'Permanent Music '
-thumbnail: '../static/uploads/permanentmusic.jpeg'
+thumbnail: '../static/uploads/permanentmusic.webp'
 year: "2022"
 categories:
 - web midi

@@ -1,6 +1,6 @@
 ---
 title: Audiovisual Concatenations
-thumbnail: "../static/uploads/audiovisual.png"
+thumbnail: "../static/uploads/audiovisual.webp"
 year: "2022"
 categories:
 - c++
