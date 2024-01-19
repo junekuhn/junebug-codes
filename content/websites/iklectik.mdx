@@ -1,0 +1,27 @@
+Contributions
+
+- Front End Development in Astro, React, Tailwind, 
+- Headless Wordpress using GraphQL and Advanced Custom Fields, 
+- Custom Shopify Storefront using Shopify Storefront API 
+- Hosting and Deployment using Docker and Google Cloud Platform 
+
+Role
+
+IKLECTIK had a unique request.  They asked a digital agency to rebrand for them, and the agency provided them with wireframes in AdobeXD for a new site, but did not actually provide a new site for them.  IKLECTIK uses Wordpress for all their events, with a post for each event.  
+
+I devised a solution for IKLECTIK that took advantage of the new features in Wordpress development that transformed their site into a Headless Wordpress with a custom Front-End, connected by GraphQL.  In this way, the team could add new events to the website using the same system that had before, and have a custom design repackage the infomation for the new site. The caveat being that they could no longer add new pages without asking a developer.  
+
+The inner technologies on the Wordpress side consists of WPGraphql, the plugin for exposing an endpoint to the wordpress data, and Advanced Custom Fields (ACF), which transforms Wordpress from an ordinary Content Management System (CMS) to a headless CMS.  Based on the design and asking my client what features they wanted, I created a CMS experience within Wordpress to make it easier to find and edit information.
+
+On the front-end side, I combined Astro with React for a speedy, compatible experience with Headless Wordpress.  Astro (https://astro.build/) popularised a client-side architechure called islands:
+
+"Islands architecture results in better frontend performance by helping you avoid monolithic JavaScript patterns and stripping all non-essential JavaScript from the page automatically. Developers keep using their favorite UI components and frameworks with Astro and still get these benefits." - https://docs.astro.build/en/concepts/islands/
+
+React had some very convenient parts for the application including a customisable calendar component, and 
+
+I used Nano Stores for state management, which is a practice that Astro recommends for sharing state between different components in a way that's framework agnostic. Both Astro and React can pull from the 'stores', and there's a custom React Hook that we can use to gather same from the server.  
+
+For hosting, I wanted to keep everything on a platform they already use (Google) and take advantage of the Google Cloud Platform for hosting both the Wordpress site and the web application running in Astro.
+
+Sadly, IKLECTIK was forced to close its doors in early 2024, leaving little reason to keep up with a new website.  
+
