@@ -75,6 +75,11 @@ const config = defineConfig({
             },
           },
           {
+            type: "string",
+            label: "Type",
+            name: "type"
+          },
+          {
             type: "rich-text",
             label: "Body",
             name: "_body",

@@ -8,6 +8,7 @@ query pageQuery {
         title
         excerpt
         heroImg
+        type
         author {
           ... on Author {
             ...AuthorParts

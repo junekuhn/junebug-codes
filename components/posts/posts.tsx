@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
@@ -6,6 +6,7 @@ import { useTheme } from "../layout";
 import format from "date-fns/format";
 import { PostsType } from "../../pages";
 import { tinaField } from "tinacms/dist/react";
+import { PostFilter } from "./postFilter";
 
 export const Posts = ({ data }: { data: PostsType[] }) => {
   const theme = useTheme();
@@ -20,9 +21,27 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
     yellow: "group-hover:text-yellow-500 dark:group-hover:text-yellow-300",
   };
 
+  const [postType, setPostType] = useState("all");
+  let renderData = [];
+
+  const handleFilter = (e) => {
+    setPostType(e.target.textContent.toLowerCase())
+  }
+
+  useEffect(() => {
+    data = data.filter(post => {
+      return post.node.type.includes(postType)
+    })
+    console.log(data.length)
+  }, [postType])
+
+
   return (
     <>
-      {data.map((postData) => {
+      <PostFilter postType={postType} onChange={handleFilter}/>
+      {data.filter(post => {
+          return post.node.type.includes(postType) || postType == 'all'
+         }).map((postData) => {
         const post = postData.node;
         const date = new Date(post.date);
         let formattedDate = "";
@@ -30,7 +49,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
           formattedDate = format(date, "MMM dd, yyyy");
         }
 
-        console.log(post.heroImg)
+
         return (
           <Link
             key={post._sys.filename}

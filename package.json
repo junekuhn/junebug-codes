@@ -7,7 +7,8 @@
     "build": "tinacms build && next build",
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
@@ -36,8 +37,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.2.0",
-    "react-player": "^2.12.0",
-    "styled-jsx": "^3.2.5",
+    "react-player": "^2",
     "tailwindcss": "^3.2.4",
     "three": "0.153",
     "tinacms": "^1.5.6",
