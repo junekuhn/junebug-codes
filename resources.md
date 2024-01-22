@@ -7,3 +7,5 @@ Fly by jeremy [CC-BY] via Poly Pizza
 If not starting
 yarn dev NOT npm run dev 
 
+if graphql mismatch
+go to tina cloud, configuration page, and reindex 
