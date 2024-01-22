@@ -1,0 +1,39 @@
+---
+thumbnail: null
+year: '2022'
+categories:
+  - Web Development
+  - Svelte
+  - P5.js
+  - Github Pages
+title: Subsystems Exhibition Website
+heroImg: /uploads/subsystems_thumbnail.webp
+excerpt: >
+  For the 2022 Goldsmiths Computational Arts MA/MFA degree show, I worked on a
+  small team to  develop the website from scratch.
+type: web art
+---
+
+Contributions
+
+* Front-End Development in Svelte-Kit
+* Deployment to Github pages
+* Coordination with Design, Data Collection, Editorial, and other student groups
+
+Role
+
+View Completed Project https://2022.goldcomparts.show/
+
+While a Master's student in Computational Arts, I was the lead developer for the exhibition website.  I worked closely with my collegues who volunteered to help with data collection, graphic design, creative coding, and UI wireframing.
+
+![](/uploads/subsystems_artworks.webp)
+
+With the limitation of using Github Pages as a hosting platform, I configured the site with SvelteKit's static site adapter.  With Static Site Generation, I could leverage front-end development with static assets and hosting.
+
+![](/uploads/home_subsystems.webp)
+
+The homepage sketch was written by Louie Hext, which highlighted the theme of Subsystems with a reactive network of nodes.  As a p5.js sketch, you can click on any of the points and it sends a chain reaction throughout the network, and if nothing is pressed, an animation begins from the top.  I modified the sketch so it could work within the SvelteKit framework.
+
+![](/uploads/mobile_subsystems.webp)
+
+For the artist pages, the largest challenge was collecting and adjusting the images so they could all be compatible with with a script.  I used ImageMagick to recompress and unify the naming and extension of the images, but any text-related issues had to be adjusted manually.  The artworks page shows a main thumbnail of the work, and the artist page shows more information about the work, an artist bio, and a profile picture.  At the bottom of the page we left room for an option artwork picture, as some artists only provided one image.

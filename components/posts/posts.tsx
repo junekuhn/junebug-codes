@@ -54,7 +54,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
           <Link
             key={post._sys.filename}
             href={`/posts/` + post._sys.filename}
-            className="group lg:basis-[30%] lg:w-[400px] max-w-[400px] max-h-[400px] mx-5 my-10 mb-8 last:mb-0 "
+            className="group lg:basis-[50%] lg:w-[400px] max-w-[400px] max-h-[400px] mx-5 my-10 mb-8 last:mb-0 "
           >
             {/*             transition-all duration-150 ease-out */}
               {post.heroImg && (

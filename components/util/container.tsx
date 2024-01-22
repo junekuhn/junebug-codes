@@ -17,7 +17,7 @@ export const Container = ({
   const widthClass = {
     small: "max-w-[1440px]",
     medium: "max-w-5xl",
-    large: "max-w-8xl",
+    large: "max-w-[1440px]",
     custom: "",
   };
 
