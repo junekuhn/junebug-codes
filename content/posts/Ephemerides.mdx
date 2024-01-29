@@ -37,6 +37,13 @@ Testing the controls in the Bela IDE:
 
 ![](/uploads/wires.webp)
 
+## In Progress: VST Plugin Development
+
+As of January 2024, I've been investigating [CMajor](https://cmajor.dev "CMajor"), a domain-specific language for writing C-style DSP code, much like Faust or SuperCollider.  What makes CMajor particularly attractive is the ability to easily port the software as a JUCE plugin, and soon to AudioWorklet.  It allows a harmony between writing concise DSP and web-based GUI's. Below is a sketch of new interface in Excalidraw, more in line with the idea of an ephemeris:
+
+![](/uploads/ephemerides_interface.png) \
+With a MIDI version, more people will have the ability to explore and create with microtonality.
+
 ## Technical Deep Dive
 
 One of the algorithm options is logarithmic, in which a ratio (8:1) for example, is divided logarithmically (base 2) by a given number of steps.  To our ears, it’s like dividing 8 into n steps evenly. If the number of steps is 3, the resulting ratios would be 8:4:2:1, and you’d hear octaves, and it would sound extremely consonant.
