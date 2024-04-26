@@ -8,7 +8,7 @@ import { InferGetStaticPropsType } from "next";
 export default function HomePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const posts = props.data.postConnection.edges;
+  const posts = props.data.blogConnection.edges;
 
   return (
     <Layout>
@@ -22,7 +22,7 @@ export default function HomePage(
 }
 
 export const getStaticProps = async () => {
-  const tinaProps = await client.queries.pageQuery();
+  const tinaProps = await client.queries.blogQuery();
   return {
     props: {
       ...tinaProps,
@@ -30,6 +30,6 @@ export const getStaticProps = async () => {
   };
 };
 
-export type PostsType = InferGetStaticPropsType<
+export type ArticlesType = InferGetStaticPropsType<
   typeof getStaticProps
->["data"]["postConnection"]["edges"][number];
+>["data"]["blogConnection"]["edges"][number];

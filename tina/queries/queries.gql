@@ -22,6 +22,29 @@ query pageQuery {
   }
 }
 
+query blogQuery {
+  ...LayoutQueryFragment
+  blogConnection {
+    edges {
+      node {
+        id
+        date
+        title
+        excerpt
+        heroImg
+        type
+        author {
+          ... on Author {
+            ...AuthorParts
+          }
+        }
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {

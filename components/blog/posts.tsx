@@ -4,11 +4,11 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
 import format from "date-fns/format";
-import { PostsType } from "../../pages";
 import { tinaField } from "tinacms/dist/react";
 import { PostFilter } from "./postFilter";
+import { ArticlesType } from "../../pages/blog";
 
-export const Posts = ({ data }: { data: PostsType[] }) => {
+export const Posts = ({ data }: { data: ArticlesType[] }) => {
   const theme = useTheme();
   const titleColorClasses = {
     blue: "group-hover:text-blue-600 dark:group-hover:text-blue-300",
@@ -27,19 +27,19 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
     setPostType(e.target.textContent.toLowerCase())
   }
 
-  useEffect(() => {
-    data = data.filter(post => {
-      return post.node.type.includes(postType)
-    })
-    console.log(data.length)
-  }, [postType])
+  // useEffect(() => {
+  //   data = data.filter(post => {
+  //     return post.node.type.includes(postType)
+  //   })
+  //   console.log(data.length)
+  // }, [postType])
 
 
   return (
     <>
-      <PostFilter postType={postType} onChange={handleFilter}/>
+      {/* <PostFilter postType={postType} onChange={handleFilter}/> */}
       {data.filter(post => {
-          return post.node.type.includes(postType) || postType == 'all'
+           return true;
          }).map((postData) => {
         const post = postData.node;
         const date = new Date(post.date);
