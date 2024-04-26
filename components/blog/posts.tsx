@@ -5,7 +5,6 @@ import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
 import format from "date-fns/format";
 import { tinaField } from "tinacms/dist/react";
-import { PostFilter } from "./postFilter";
 import { ArticlesType } from "../../pages/blog";
 
 export const Posts = ({ data }: { data: ArticlesType[] }) => {
@@ -37,7 +36,6 @@ export const Posts = ({ data }: { data: ArticlesType[] }) => {
 
   return (
     <>
-      {/* <PostFilter postType={postType} onChange={handleFilter}/> */}
       {data.filter(post => {
            return true;
          }).map((postData) => {

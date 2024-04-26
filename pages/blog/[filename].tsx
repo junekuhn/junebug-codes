@@ -13,10 +13,10 @@ export default function BlogPostPage(
     variables: props.variables,
     data: props.data,
   });
-  if (data && data.post) {
+  if (data && data.blog) {
     return (
       <Layout rawData={data} data={data.global}>
-        <Post {...data.post} />
+        <Post {...data.blog} />
       </Layout>
     );
   }
@@ -28,7 +28,7 @@ export default function BlogPostPage(
 }
 
 export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.blogPostQuery({
+  const tinaProps = await client.queries.articleQuery({
     relativePath: `${params.filename}.mdx`,
   });
   return {
@@ -38,13 +38,6 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-/**
- * To build the blog post pages we just iterate through the list of
- * posts and provide their "filename" as part of the URL path
- *
- * So a blog post at "content/posts/hello.md" would
- * be viewable at http://localhost:3000/posts/hello
- */
 export const getStaticPaths = async () => {
   const postsListData = await client.queries.blogConnection();
   return {
@@ -55,6 +48,6 @@ export const getStaticPaths = async () => {
   };
 };
 
-export type PostType = InferGetStaticPropsType<
+export type ArticleType = InferGetStaticPropsType<
   typeof getStaticProps
->["data"]["post"];
+>["data"]["blog"];

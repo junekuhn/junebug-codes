@@ -19,7 +19,7 @@ import format from "date-fns/format";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Prism } from "tinacms/dist/rich-text/prism";
 import type { TinaMarkdownContent, Components } from "tinacms/dist/rich-text";
-import { PostType } from "../../pages/posts/[filename]";
+import { ArticleType } from "../../pages/blog/[filename]";
 import { tinaField } from "tinacms/dist/react";
 import ReactPlayer from "react-player/lazy";
 
@@ -119,7 +119,7 @@ const components: Components<{
   },
 };
 
-export const Post = (props: PostType) => {
+export const Post = (props: ArticleType) => {
   const theme = useTheme();
   const titleColorClasses = {
     blue: "from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500",

@@ -64,3 +64,16 @@ query blogPostQuery($relativePath: String!) {
     }
   }
 }
+
+query articleQuery($relativePath: String!) {
+  ...LayoutQueryFragment
+  blog(relativePath: $relativePath) {
+    ...BlogParts
+    author {
+      ... on Author {
+        name
+        avatar
+      }
+    }
+  }
+}
