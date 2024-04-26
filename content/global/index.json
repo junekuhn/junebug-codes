@@ -19,15 +19,18 @@
       {
         "href": "uploads/CV_Developer.pdf",
         "label": "Developer CV"
+      },
+      {
+        "href": "blog",
+        "label": "Blog"
       }
     ]
   },
   "footer": {
     "color": "default",
     "social": {
-      "twitter": "https://twitter.com/justinkuhnmedia",
       "instagram": "https://instagram.com/junebug.codes",
-      "github": "https://github.com/justinkuhn"
+      "github": "https://github.com/junekuhn"
     }
   },
   "theme": {

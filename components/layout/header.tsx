@@ -66,15 +66,15 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
       className={`relative overflow-hidden bg-gradient-to-b ${headerColorCss}`}
     >
       <Container size="custom" className="py-0 relative h-auto z-10 w-full">
-        <div className="flex items-center w-full flex-wrap justify-center md:justify-between gap-6">
+        <div className="flex items-center w-full flex-wrap justify-start ml-5 md:ml-0 sm:justify-between gap-6">
             <Link
               href="/"
-              className="flex gap-10 items-center  whitespace-nowrap tracking-[.002em]"
+              className="flex gap-10 items-center w-full sm:w-[250px] whitespace-nowrap tracking-[.002em]"
             >
               <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.webp"/>
             </Link>
 
-          <ul className="flex gap-6 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
+          <ul className="flex flex-col md:flex-row gap-4 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
             {data.nav &&
               data.nav.map((item, i) => {
                 const activeItem =

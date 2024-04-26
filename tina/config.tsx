@@ -382,13 +382,13 @@ const config = defineConfig({
         ],
       },
       {
-        label: "Articles",
-        name: "articles",
-        path: "content/articles",
+        label: "Blog",
+        name: "blog",
+        path: "content/blog",
         format: "mdx",
         ui: {
           router: ({ document }) => {
-            return `/articles/${document._sys.filename}`;
+            return `/blog/${document._sys.filename}`;
           },
         },
         fields: [
