@@ -146,12 +146,10 @@ export const Post = (props: PostType) => {
       <Container width="small" className={`flex-1 pb-2`} size="large">
         <h2
           data-tina-field={tinaField(props, "title")}
-          className={`w-full relative	mb-8 text-2xl lg:text-6xl font-extrabold tracking-normal text-center title-font`}
+          className={`w-full text-black relative	mb-8 text-2xl lg:text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
-            className={`bg-clip-text text-transparent bg-gradient-to-r ${
-              titleColorClasses[theme.color]
-            }`}
+            className={`bg-clip-text  bg-gradient-to-r text-black`}
           >
             {props.title}
           </span>

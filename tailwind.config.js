@@ -101,6 +101,7 @@ module.exports = {
       fontFamily: {
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
+        azeret: ["Azeret Mono", ...defaultTheme.fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {

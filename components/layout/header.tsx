@@ -71,7 +71,8 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               href="/"
               className="flex gap-10 items-center w-full sm:w-[250px] whitespace-nowrap tracking-[.002em]"
             >
-              <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.webp"/>
+              <h1>junebug codes</h1>
+              {/* <img className="w-[200px] h-[125px]" src="/uploads/junebug_whitetransparent.webp"/> */}
             </Link>
 
           <ul className="flex flex-col md:flex-row gap-4 sm:gap-8 lg:gap-10 tracking-[.002em] -mx-4">
