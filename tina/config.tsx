@@ -258,6 +258,11 @@ const config = defineConfig({
                     label: "Github",
                     name: "github",
                   },
+                  {
+                    type: "string",
+                    label: "Email",
+                    name: "email",
+                  },
                 ],
               },
             ],

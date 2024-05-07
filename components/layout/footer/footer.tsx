@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaFacebookF, FaGithub, FaTwitter } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
 // import { RawRenderer } from "./rawRenderer";
@@ -113,6 +114,22 @@ export const Footer = ({ data }) => {
                   }`}
                 />
               </a>
+            )}
+            {data.social && data.social.email && (
+              <a
+              className="inline-block opacity-80 hover:opacity-100 transition ease-out duration-150"
+              href={data.social.email}
+              target="_blank"
+            >
+              <IoIosMail
+                className={`${socialIconClasses} ${
+                  socialIconColorClasses[
+                    data.color === "primary" ? "primary" : theme.color
+                  ]
+                }`}
+              />
+            </a>
+
             )}
           </div>
           {/* <RawRenderer parentColor={data.color} rawData={rawData} /> */}
