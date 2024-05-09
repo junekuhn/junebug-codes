@@ -10,12 +10,13 @@ export default function BlogPostPage(
 ) {
   const { data } = useTina({
     query: props.query,
+
     variables: props.variables,
     data: props.data,
   });
   if (data && data.blog) {
     return (
-      <Layout rawData={data} data={data.global}>
+      <Layout rawData={data} data={data.global} blogData={data.blog} >
         <Post {...data.blog} />
       </Layout>
     );

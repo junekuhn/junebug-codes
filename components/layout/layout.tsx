@@ -5,21 +5,35 @@ import { Footer } from "./footer";
 import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
 import { Global } from "../../tina/__generated__/types";
+import { ArticleType } from "../../pages/blog/[filename]";
 
 export const Layout = ({
   rawData = {},
   data = layoutData,
   children,
+  blogData,
 }: {
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   children: React.ReactNode;
+  blogData?: ArticleType;
 }) => {
+
   return (
     <>
       <Head>
-        <title>Junebug Codes</title>
+        {/* @ts-ignore */}
+        <title>{ blogData.title + " | "} Junebug Codes</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        {blogData && 
+        <>
+        <meta property="og:title" content={blogData.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://junebug.codes" />
+        <meta property="og:image" content={"https://junebug.codes" + blogData.heroImg} />
+        </>
+        }
         <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
