@@ -271,7 +271,6 @@ const config = defineConfig({
             type: "object",
             label: "Theme",
             name: "theme",
-            // @ts-ignore
             fields: [
               {
                 type: "string",

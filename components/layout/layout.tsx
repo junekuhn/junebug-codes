@@ -6,6 +6,7 @@ import { Theme } from "./theme";
 import layoutData from "../../content/global/index.json";
 import { Global } from "../../tina/__generated__/types";
 import { ArticleType } from "../../pages/blog/[filename]";
+import { PostType } from "../../pages/posts/[filename]";
 
 export const Layout = ({
   rawData = {},
@@ -16,14 +17,13 @@ export const Layout = ({
   rawData?: object;
   data?: Omit<Global, "id" | "_sys" | "_values">;
   children: React.ReactNode;
-  blogData?: ArticleType;
+  blogData?: ArticleType | PostType;
 }) => {
 
   return (
     <>
       <Head>
-        {/* @ts-ignore */}
-        <title>{ blogData.title + " | "} Junebug Codes</title>
+        <title>{ blogData?.title + " | "} Junebug Codes</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         {blogData && 
