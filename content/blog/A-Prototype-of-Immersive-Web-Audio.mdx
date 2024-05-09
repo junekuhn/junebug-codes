@@ -43,15 +43,15 @@ I'm also using Vite as a build tool.  [https://vitejs.dev/](https://vitejs.dev/)
 
 ### UI and UX
 
-Working with full screen Three.js, and without frameworks, I decided to make full screen "slides" that progress with button click. All I had to do js-wise was to swap slides on click and have a bit of logic to load a particular scene if that one was chosen.  The biggest drawback I'd guess is that it's really difficult to have switch between scenes without a framework to back it up.  Working with js modules presents unique challenges when it comes to 3D rendering.  
+Working with full screen Three.js, and without frameworks, I decided to make full screen "slides" that progress with button click. All I had to do js-wise was to swap slides on click and have a bit of logic to load a particular scene if that one was chosen.  The biggest drawback I'd guess is that it's really difficult to have switch between scenes without a framework to back it up.  Working with js modules presents unique challenges when it comes to 3D rendering.
 
 I've been inspired by many Neubrutalist web design to have giant buttons take up most of the screen, and keep everything interactive to a minimum.  I didn't have to use any web design tooling, focusing on typeface and simplicity was a nice change of pace for me.
 
-![](</uploads/Screenshot 2024-05-09 at 3.15.53 PM.png>)
+![](/uploads/home.png)
 
 At the moment I have these pop-up instructions for people who aren't used to 3D web experience, and looks a bit like a cheat sheet for each experience.
 
-![](</uploads/Screenshot 2024-05-09 at 3.17.40 PM.png>)
+![](/uploads/instructions.png)
 
 But after talking with one of my mentors for the project, the way that this information is laid out isn't the most intuitive, and probably presents too much information.  It's applicable to settings if you're curious about the full amount of info, but for most viewers it'll probably be better to have instructions for sighted people inside the experience to explore both the teleporting and moving functionalities.
 
@@ -59,11 +59,11 @@ It will be best to explain some of the subtleties of the experience as you actua
 
 ### Audio Visualizations
 
-![](</uploads/Screenshot 2024-05-09 at 3.27.51 PM.png>)
+![](/uploads/positional.png)
 
 In the positional audio scene, I have a custom fragment shader that reads the volume of the audio html tag.  As the audio plays, the sphere's material changes color based on volume.  For each of the   spheres, there's a different track, so each of the materials are independent of each other.
 
-![](</uploads/Screenshot 2024-05-09 at 3.31.34 PM.png>)
+![](/uploads/ambisonics.png)
 
 And for the ambisonic scene, JSAmbisonics provides an intensity visualiser, which provides an angular coordinate of the peak intensity of the soundfield. I mapped this coordinate 1:1 with a spherical texture.  Maybe in the future we could get into a realtime heatmap, but for now it's just the peak intensity at a certain point at a certain time.  I wrote a shader that overlays the past 30 frames to give a second-long history of the intensity of the soundfield.
 
