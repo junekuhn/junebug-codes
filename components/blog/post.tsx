@@ -149,7 +149,7 @@ export const Post = (props: ArticleType) => {
           className={`w-full relative	mb-8 text-2xl lg:text-6xl font-extrabold tracking-normal text-center title-font`}
         >
           <span
-            className={`bg-clip-text text-transparent bg-gradient-to-r ${
+            className={`bg-clip-text text-black bg-gradient-to-r ${
               titleColorClasses[theme.color]
             }`}
           >

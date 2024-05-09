@@ -9,19 +9,19 @@
     "color": "default",
     "nav": [
       {
-        "href": "",
+        "href": "/",
         "label": "Portfolio"
       },
       {
-        "href": "about",
+        "href": "/about",
         "label": "About"
       },
       {
-        "href": "uploads/CV_Developer.pdf",
-        "label": "Developer CV"
+        "href": "mailto:june@junebug.codes",
+        "label": "Contact"
       },
       {
-        "href": "blog",
+        "href": "/blog",
         "label": "Blog"
       }
     ]

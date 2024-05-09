@@ -1,0 +1,47 @@
+---
+title: Keyboard Accessibility in 3D Web Environments
+heroImg: /uploads/soundinstallation.jpg
+excerpt: ''
+author: ''
+date: 2024-05-09T23:00:00.000Z
+type: ''
+---
+
+outline 
+
+in most webpages, you don't have to use the mouse in order to navigate webpages
+what's done is using tab and spacebar to move to different elements, and interact with them
+
+in 3d web, it's often assumed that you have to use the mouse in order to interact with the site.
+that's not true
+
+at first I was just following what most game developers might do, which is movment and orientation controls
+but thinking about VR controls, it's standard to have a 'teleport' control to avoid having a move continuously to an exact location. 
+the same can apply, with using 'tab' as a teleport 
+
+wasd isn't the greatest thing because it's not intuitive to people the same way
+orientation, in 3d games, is reduced to 2 axes using spherical coordinates
+
+
+in the demo, in the 3D position scene, I have teleport set up with the tab controls
+for the scene I developed a custom controls for Three.js that has this functionality built in.  
+
+I can still use PointerLock, which requires you to use the ESC key to exit an experience.  
+mouse and keyboard can be used interchangably
+
+scene description is the next challenge, and completes what's necessary
+
+insides of the keyboard access class / scene
+    sensitivity
+    the developer has to set up what happens on tab
+    you define a list of points 
+    you cycle through the locations as if cycling through a site
+    don't we find those sites that have a ton of 3d pallax effect annoying to have scroll through?
+
+
+we don't ascribe to the same rules as video games
+we take after what the web was built on, viewing and interacting with media
+browsing over "immersion"
+controls that reflect this, having the ability to explore, but also quickly navigate when desired.
+
+

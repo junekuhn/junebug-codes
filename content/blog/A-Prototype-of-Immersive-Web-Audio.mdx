@@ -2,35 +2,75 @@
 title: A Prototype of Immersive Web Audio
 heroImg: /uploads/dycp2.gif
 excerpt: ''
-author: ''
 date: 2024-04-25T23:00:00.000Z
 ---
 
-What is the prototype for this project?  What's the minimum viable solution for developing spatial audio tools for the browser in Three.js?
+What is a prototype for accessible and immersive web audio?  What's the minimum viable solution for developing spatial audio tools for the browser in Three.js?
+
+For more background on the project and motivation, check out this post first.  But in short, the brief is that I'm building a toolkit for artists, web developers, and musicians to build immersive experiences accessible to screen readers in the browser. This approach aims to utilize open web standards to enable myself and others to create website installations that allow for hybridity with in-person immersive installations like projections and speaker arrays.
+
+In this post I'm going to cover technical features, software development choices, user interface choices, user experience choices, and more information on the demo viewable at [https://junekuhn.github.io/dycp-immersive-web-audio/](https://junekuhn.github.io/dycp-immersive-web-audio/)
+
+Overall my goal is going along with extending existing features of the web - serving and displaying static content.  But instead of text and images, The goal here is to display static spatial audio files at a minimum.
+
+Despite how prevelent fancy frameworks and libraries are, a lot of frontend developers got started with web development because they cared about making the internet a better public infrastructure.  We want to make information, whether that's text, forms, images, audio, video, or games, the most accessible to the most people.  We, as a society, use the internet for almost anything, and if there are barriers to that information it creates what sociologists refer to as 'the digital divide'.  So the minimum requirements as listed below reflect a connection to make an inherently dynamic form of content - spatial audio - as easy and simple to navigate as possible.
+
+##### Minimum Requirements:
+
+* Screen Reader Accessible
+* Accessible Ambisonic Controls
+* Accessible Positional Audio Controls
+* Settings for controls sensitivity
+* Desktop, Tablet, and Mobile Phone controls
+* Gamepad API controls
+* Custom SOFA file for binaural playback
+* Documentation for developers to use the controls in their own projects
+* Intuitive experiences that introduce people to the possibilities of spatial audio in the browser
 
 My software design priorities are oriented around making use of web standards and accessibility practices to make immersive web in the browser as accessibie as possible, focusing on software and hardware controls that are alternate to the mouse.
 
-That means no frameworks, for now.  Libraries like React-Three-Fiber and A-Frame should be able to pair well with this project.
+That means no frameworks, for now.  Libraries like React-Three-Fiber and A-Frame should be able to pair well with this project, as an extension.
 
-I'm going to a server later, so you'd have download the project and add your own audio unless there's a way to add a URL
+At the moment I'm keeping the entire frontend static.  In the future there will be many use cases to communicate with servers, for larger files, user preferences, authentication, or file upload.
 
-overall my goal is going along with the lines of the original web - serving and displaying static content.  But instead of text and images, The goal here is to display static spatial audio files
+### Library Choices
 
-Minimum Requirements:
+Three.js is the most prevelant and well-supported 3D library on the web at the moment.  It's also what I have the most experience with.  Babylon.js has some interesting built in spatial audio features, [https://doc.babylonjs.com/features/featuresDeepDive/audio/playingSoundsMusic](https://doc.babylonjs.com/features/featuresDeepDive/audio/playingSoundsMusic), but I find Three.js Audio source code easy to read and work with. I've also heard wonderful things about PlayCanvas, but at this time unfortunately I don't have the bandwidth to explore an entirely different system.
 
-* Screen Reader Accessible
-* Ambisonic Controls and Basic Preferences
-* Positional Audio Controls and Basic Preferences
-* Desktop, Tablet, and Mobile Phone controls
-* Gamepad API controls
-* Custom SOFA file upload
-* A guide for developers and artists to get started
-* ability to calibrate sensitvity and preferences
+JSAmbisonics is probably the most versatile Javascript ambisonics library at the moment, that's open source and free to use.  Google's Omnitone is very straightforward, and I've used it before,  but JSAmbisonics has features for higher-order ambisonics and an API for intensity visualisation that I really like.  There are a few companies that license their software for commercial use, but I want to keep the conversation around free and open source.  Developed by David Poirier-Quinot (IRCAM) and Archontis Politis (Aalto University), JSAmbisonics was developed as a research tool and has individual classes where you can mix and match certain features.
 
-In what use cases is this prototype useful for?
+I'm also using Vite as a build tool.  [https://vitejs.dev/](https://vitejs.dev/) is newer but made the process of converting commonjs files to modules very easy.  It also makes asset and scene bundling very straightforward and simple, unlike the predecessors Webpack, Babel, or Grunt.
+
+### UI and UX
+
+Working with full screen Three.js, and without frameworks, I decided to make full screen "slides" that progress with button click. All I had to do js-wise was to swap slides on click and have a bit of logic to load a particular scene if that one was chosen.  The biggest drawback I'd guess is that it's really difficult to have switch between scenes without a framework to back it up.  Working with js modules presents unique challenges when it comes to 3D rendering.  
+
+I've been inspired by many Neubrutalist web design to have giant buttons take up most of the screen, and keep everything interactive to a minimum.  I didn't have to use any web design tooling, focusing on typeface and simplicity was a nice change of pace for me.
+
+![](</uploads/Screenshot 2024-05-09 at 3.15.53 PM.png>)
+
+At the moment I have these pop-up instructions for people who aren't used to 3D web experience, and looks a bit like a cheat sheet for each experience.
+
+![](</uploads/Screenshot 2024-05-09 at 3.17.40 PM.png>)
+
+But after talking with one of my mentors for the project, the way that this information is laid out isn't the most intuitive, and probably presents too much information.  It's applicable to settings if you're curious about the full amount of info, but for most viewers it'll probably be better to have instructions for sighted people inside the experience to explore both the teleporting and moving functionalities.
+
+It will be best to explain some of the subtleties of the experience as you actually explore and experience it.  By the end of the summer I'll include something a bit more in-scene in terms of instructions.
+
+### Audio Visualizations
+
+![](</uploads/Screenshot 2024-05-09 at 3.27.51 PM.png>)
+
+In the positional audio scene, I have a custom fragment shader that reads the volume of the audio html tag.  As the audio plays, the sphere's material changes color based on volume.  For each of the   spheres, there's a different track, so each of the materials are independent of each other.
+
+![](</uploads/Screenshot 2024-05-09 at 3.31.34 PM.png>)
+
+And for the ambisonic scene, JSAmbisonics provides an intensity visualiser, which provides an angular coordinate of the peak intensity of the soundfield. I mapped this coordinate 1:1 with a spherical texture.  Maybe in the future we could get into a realtime heatmap, but for now it's just the peak intensity at a certain point at a certain time.  I wrote a shader that overlays the past 30 frames to give a second-long history of the intensity of the soundfield.
+
+### In what use cases is this prototype useful for?
 
 If you're a developer you could use the repository as a starting template to create online installations.
 
 If you're completely new to spatial audio it's an introduction to the capabilities of spatial audio and how you could interact with it without having to use a headset or go in person to experience a speaker array.
 
-If you're an artist, there will be a step by step guide to publishing ambisonic work in the browser (positional is more complicated and would involve scene authoring) though you may still need some technical abilities to do this.
+If you're a sound artist, there will be a step by step guide to publishing ambisonic work in the browser (positional is more complicated and would involve scene authoring).  You would be able to clone my code repository and host it yourself as a static webpage without coding anything yourself, replacing the audio files with your own.
