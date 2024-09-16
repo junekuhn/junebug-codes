@@ -1,6 +1,6 @@
 ---
 title: Keyboard Accessibility in 3D Web Environments
-heroImg: /uploads/soundinstallation.jpg
+heroImg: ''
 excerpt: ''
 date: 2024-05-09T23:00:00.000Z
 type: ''
@@ -13,7 +13,7 @@ In traditional web pages, you typically use tab, spacebar, return, and escape fo
 In 3d web, it's often assumed that you have to use the mouse in order to interact with the site.  Three.js has a few controls that do this, through Orbit Controls or Pointer Lock Controls.  HTML is seen as an extra, and so any keyboard functionality has to be programmed manually.  This also includes pmndrs' A11y spec for React-Three-Fiber, which requires developers to use a custom A11y component.
 
 At first I was just following what most game developers might do, which is movement and orientation controls
-But thinking about VR controls, it's standard to have a 'teleport' control to avoid having a move continuously to an exact location.  I think that teleport could very easily be analogous to the Tab functionality on most webpages.  
+But thinking about VR controls, it's standard to have a 'teleport' control to avoid having a move continuously to an exact location.  I think that teleport could very easily be analogous to the Tab functionality on most webpages.
 
 In the first prototype, I focus on arrow keys for rotations, tab and spacebar for movement, and esc for exiting pointer lock.  Instead of being able to move in all directions, you could only move forward, making navigation a bit simpler.
 
