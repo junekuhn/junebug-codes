@@ -2,46 +2,62 @@
 title: Keyboard Accessibility in 3D Web Environments
 heroImg: /uploads/soundinstallation.jpg
 excerpt: ''
-author: ''
 date: 2024-05-09T23:00:00.000Z
 type: ''
 ---
 
-outline 
+I'm taking a deep dive into keyboard accessibility to think a bit critically about how to apply certain web standards towards immersive audio.
 
-in most webpages, you don't have to use the mouse in order to navigate webpages
-what's done is using tab and spacebar to move to different elements, and interact with them
+In traditional web pages, you typically use tab, spacebar, return, and escape for most navigation. Certain HTML elements, like \<button>, have keyboard accessibility built in, meaning that you can hit tab to find it.  If using a generic \<div> element, the ARIA spec [https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) defines ways of adding this kind of functionality through attributes, like "role", "label", and "aria-label" to aid screenreaders.
 
-in 3d web, it's often assumed that you have to use the mouse in order to interact with the site.
-that's not true
+In 3d web, it's often assumed that you have to use the mouse in order to interact with the site.  Three.js has a few controls that do this, through Orbit Controls or Pointer Lock Controls.  HTML is seen as an extra, and so any keyboard functionality has to be programmed manually.  This also includes pmndrs' A11y spec for React-Three-Fiber, which requires developers to use a custom A11y component.
 
-at first I was just following what most game developers might do, which is movment and orientation controls
-but thinking about VR controls, it's standard to have a 'teleport' control to avoid having a move continuously to an exact location. 
-the same can apply, with using 'tab' as a teleport 
+At first I was just following what most game developers might do, which is movement and orientation controls
+But thinking about VR controls, it's standard to have a 'teleport' control to avoid having a move continuously to an exact location.  I think that teleport could very easily be analogous to the Tab functionality on most webpages.  
 
-wasd isn't the greatest thing because it's not intuitive to people the same way
-orientation, in 3d games, is reduced to 2 axes using spherical coordinates
+In the first prototype, I focus on arrow keys for rotations, tab and spacebar for movement, and esc for exiting pointer lock.  Instead of being able to move in all directions, you could only move forward, making navigation a bit simpler.
 
+But going through the testing sessions, I found it was necessary to either limit rotation to only left or right, or have no positional movement at all.  Participants encountered a lot of unnecessary difficulty with the up/down rotation, as without vision the elevation masked most of the directionality of the audio.  Our ears tend to hear things in a left/right orientation, and binaural audio has many known issues with elevation calibration.
 
-in the demo, in the 3D position scene, I have teleport set up with the tab controls
-for the scene I developed a custom controls for Three.js that has this functionality built in.  
+Finally, I've been able to use HTML list elements as a way to navigate through the experience directly
 
-I can still use PointerLock, which requires you to use the ESC key to exit an experience.  
-mouse and keyboard can be used interchangably
+```html
+<!-- this is where the navigable html elements will be that propel you through the scene -->
+<ol style="display: none;" id="scene-list" class="screenreader">
+</ol>
+<div id="menu" tabindex="0" role="button" class="screenreader" style="display: none;">
+  <div class="container">
+    <h1 class="title">Menu</h2>
+  </div>
+  <div class="button-container">
+    <button class="big-button" id="menu-resume">Resume</button>
+    <button class="big-button" id="menu-settings">Settings</button>
+    <button class="big-button" id="menu-info">Info</button>
+  </div>
+  <div class="loading-bar"></div>
+</div>
+```
 
-scene description is the next challenge, and completes what's necessary
+This is all the HTML required for navigation.  If something has role of 'button', the listener can use spacebar, or double tap on mobile to select the element.
 
-insides of the keyboard access class / scene
-    sensitivity
-    the developer has to set up what happens on tab
-    you define a list of points 
-    you cycle through the locations as if cycling through a site
-    don't we find those sites that have a ton of 3d pallax effect annoying to have scroll through?
+```javascript
+//construct bounding boxes
+listenerPositions.map((position, i) => {
 
+  //focus listeners
+  const listItem = document.createElement("li");
+  listItem.tabIndex = 0;
+  listItem.setAttribute("data-index", i);
+  listItem.role = "button";
+  listItem.addEventListener("focus", (e) => {
 
-we don't ascribe to the same rules as video games
-we take after what the web was built on, viewing and interacting with media
-browsing over "immersion"
-controls that reflect this, having the ability to explore, but also quickly navigate when desired.
+    // all the code for navigation
+  }
+  //scene description
+  listItem.innerHTML = descriptions[i];
+  //append li to ol
+  sceneListElement.appendChild(listItem);
+}
+```
 
-
+By creating the list items from within the scene, you can make them much more integrated and keyboard accessible.
