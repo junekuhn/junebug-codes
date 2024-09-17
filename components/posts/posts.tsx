@@ -39,7 +39,7 @@ export const Posts = ({ data }: { data: PostsType[] }) => {
     <>
       <PostFilter postType={postType} onChange={handleFilter}/>
       {data.filter(post => {
-          return post.node.type.includes(postType) || postType == 'all'
+          return post.node.type.includes(postType) ?? postType == 'all'
          }).map((postData) => {
         const post = postData.node;
         const date = new Date(post.date);
