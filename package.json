@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"next dev\"",
+    "dev": "tinacms dev -c --datalayer-port 9001 \"next dev\"",
     "build": "tinacms build && next build",
-    "start": "tinacms build && next start",
+    "start": "tinacms build  && next start ",
     "export": "npm run build && next export",
     "lint": "eslint . --ext .ts,.tsx",
     "preinstall": "npx npm-force-resolutions"
