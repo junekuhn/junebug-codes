@@ -9,6 +9,7 @@ query pageQuery {
         excerpt
         heroImg
         type
+        status
         author {
           ... on Author {
             ...AuthorParts

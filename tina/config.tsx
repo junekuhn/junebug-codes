@@ -159,6 +159,15 @@ const config = defineConfig({
             ],
             isBody: true,
           },
+                    {
+            type: "string",
+            name: "status",
+            label: "Status",
+            options: [
+              { label: "Ongoing", value: "ongoing" },
+              { label: "Archive", value: "archive" },
+            ],
+          },
         ],
       },
       {
