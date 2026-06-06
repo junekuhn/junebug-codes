@@ -8,7 +8,7 @@
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
     "lint": "eslint . --ext .ts,.tsx",
-    "preinstall": "npx npm-force-resolutions"
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
@@ -21,15 +21,17 @@
     "@typescript-eslint/parser": "^5.20.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.13.0",
+    "patch-package": "^8.0.1",
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",
-    "postcss-nesting": "^10.1.0"
+    "postcss-nesting": "^10.1.0",
+    "postinstall-postinstall": "^2.1.0"
   },
   "dependencies": {
     "@headlessui/react": "1.7.5",
     "@react-three/a11y": "^3.0.0",
-    "@react-three/drei": "^9.80.2",
-    "@react-three/fiber": "^8.13.6",
+    "@react-three/drei": "9.108.3",
+    "@react-three/fiber": "8.15.19",
     "@tailwindcss/typography": "^0.5.8",
     "@types/three": "^0.155.0",
     "better-sqlite3": "^12.10.0",
@@ -40,12 +42,14 @@
     "react-icons": "^4.2.0",
     "react-player": "^2",
     "tailwindcss": "^3.2.4",
-    "three": "0.153",
+    "three": "0.158.0",
+    "three-mesh-bvh": "0.7.8",
     "tinacms": "^3.9.1",
     "typescript": "^6.0.3"
   },
   "resolutions": {
     "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.2"
+    "@types/react-dom": "17.0.2",
+    "@heroicons/react": "1.0.6"
   }
 }
