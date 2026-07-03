@@ -62,13 +62,8 @@ const PostCard = ({ postData, titleColorClass }: PostCardProps) => {
           </span>
         </h3>
 
-        {formattedDate && (
-          <p className="text-sm text-gray-400 dark:text-gray-500 text-center mb-3">
-            {formattedDate}
-          </p>
-        )}
 
-        <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
+        <div className="prose dark:prose-dark w-full max-w-none p-4 opacity-70">
           <TinaMarkdown content={post.excerpt} />
         </div>
       </div>
