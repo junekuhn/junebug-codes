@@ -23,6 +23,10 @@
       {
         "href": "/blog",
         "label": "Blog"
+      },
+      {
+        "href":"https://junebug-codes-ed96ie.subscribepage.io/",
+        "label": "Mailing List"
       }
     ]
   },

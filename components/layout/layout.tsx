@@ -59,6 +59,7 @@ export const Layout = ({
             />
           </>
         )}
+
       </Head>
       <Theme data={data?.theme}>
         <div
