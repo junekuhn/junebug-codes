@@ -14,15 +14,19 @@ blocks:
 
       [Google Scholar](https://scholar.google.co.uk/citations?user=9KRmrHAAAAAJ\&hl=en)
 
-      ##### 2026 
+      (2026) Voice, Technology, and Witchcraft, Peckham Digital, Festival of Creative Computing, London. [https://www.tickettailor.com/events/peckhamdigital/2419494](https://www.tickettailor.com/events/peckhamdigital/2419494)
 
-      Voice, Technology, and Witchcraft, Peckham Digital, Festival of Creative Computing, London. [https://www.tickettailor.com/events/peckhamdigital/2419494](https://www.tickettailor.com/events/peckhamdigital/2419494)
+      (2026) Courtney Reed, June Kuhn, Byuka Makodru, Adam Schmidt. crossing technologically-enforced boundaries with séance. Queer Ecology and the Supernatural, Loughborough University.  [https://www.lboro.ac.uk/research/ias/events/2026/september/queer-ecology-and-the-supernatural/](https://www.lboro.ac.uk/research/ias/events/2026/september/queer-ecology-and-the-supernatural/)
 
-      Courtney Reed, June Kuhn, Byuka Makodru, Adam Schmidt. crossing technologically-enforced boundaries with séance. Queer Ecology and the Supernatural, Loughborough University.  [https://www.lboro.ac.uk/research/ias/events/2026/september/queer-ecology-and-the-supernatural/](https://www.lboro.ac.uk/research/ias/events/2026/september/queer-ecology-and-the-supernatural/)
+      (2026) Musical Dildos? Reframing a vocal instrument as a prosthetic sex organ. Bodies in Digital Transition, 2nd Edition, King's College London. [https://bio.site/BDT\_2026](https://bio.site/BDT_2026)
 
-      Musical Dildos? Reframing a vocal instrument as a prosthetic sex organ. Bodies in Digital Transition, 2nd Edition, King's College London. [https://bio.site/BDT\_2026](https://bio.site/BDT_2026)
+      (2024) Press Conference \[Digital Installation and Web Art] Chaos & Hope, Hypha Studios, Group Exhibition, London UK
 
-      ##### 2025
+      (2023) Ephemerides \[Concert Performance] A-Side | B-Side, Goldsmiths University of London Computational Arts Staff & Residents Pop-Up Exhibition, London UK
+
+      (2023) trampbunny \[Live Coding Performance] Live Coding Spatial Sound, IKLECTIK Art Lab, London, UK.
+
+      (2023) Goldsmiths Computational Arts Alumnae Residency \[Artist Residency]. Goldsmiths, University of London, UK.
 
       ##### Publications
 
