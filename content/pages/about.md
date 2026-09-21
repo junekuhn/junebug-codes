@@ -20,6 +20,8 @@ blocks:
 
       (2026) Musical Dildos? Reframing a vocal instrument as a prosthetic sex organ. Bodies in Digital Transition, 2nd Edition, King's College London. [https://bio.site/BDT\_2026](https://bio.site/BDT_2026)
 
+      (2025) June Kuhn, Nicole Robson, Brittney Allen, and Andrew McPherson. Entangled Listening: Exploring Relational and Diverse Listening Practices for DMI Design.  Workshop at the New Interfaces for Musical Expression 
+
       (2024) Press Conference \[Digital Installation and Web Art] Chaos & Hope, Hypha Studios, Group Exhibition, London UK
 
       (2023) Ephemerides \[Concert Performance] A-Side | B-Side, Goldsmiths University of London Computational Arts Staff & Residents Pop-Up Exhibition, London UK
